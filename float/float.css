@@ -16,6 +16,11 @@
     height: 200px;
     float: left;
 }
+.holder::after{
+    content:'';
+    display:block;
+    clear:both;
+}
 .box1, .box5, .box9, .box11, .box13{
     background: #999;
 } 
@@ -28,7 +33,24 @@
 .box4, .box8, .box16{
     background: #eee;
 }
-.box1{
+.holder-1{
+    width: 200px;
+    float: right;
 }
-.box2{
+.holder-2{
+    width: 400px;
+    float: right;
+}
+.holder-3{
+    width: 400px;
+    float: right;
+}
+.holder-3-1{
+    float: right;
+    width: 200px;
+}
+.holder-5{
+    margin-top: -400px;
+    float: left;
+    width: 200px;
 }
