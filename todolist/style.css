@@ -32,6 +32,24 @@ li{
     margin-top: 100px;
     border-radius: 5px;
 }
+/*@keyframes tool{
+    0%{opacity: 0; left: -1000px;}
+    10%{left: 10px;}
+    50%{opacity: 1;}
+    90%{left: 10px;}
+    100%{opacity: 0; left:-1000px;}
+
+}*/
+/*.tooltip{
+    background: rgba(248,48,84,0.5);
+    position: absolute;
+    width: 73%;
+    padding:10px;
+    top: 110px;
+    color: white;
+    opacity: 0;
+    left: -1000px;
+}*/
 #demo legend{
     text-align: center;
     font-size: 1.6rem;

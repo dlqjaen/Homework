@@ -40,31 +40,41 @@
   fieldset.appendChild(add);
   fieldset.appendChild(ul);
 //   내용적용
-  label.textContent = '할 일을 적으d세요.'
+  label.textContent = '할 일을 적으세요.'
   legend.textContent = 'To Do List';
 //  클릭이벤트
-  add.onclick = function(){
-    if(input.value === ''){
-        return false;
-    }
-    var li = document.createElement('li');
-    var select = document.createElement('input');
-    var list_label = document.createElement('label');
-    list_label.setAttribute('class','list_label');
-    select.setAttribute('type','checkbox');
-    select.setAttribute('class','select');
-    list_label.textContent = input.value;
-    ul.appendChild(li);
-    li.appendChild(list_label);
-    li.appendChild(select);
-    input.value = '';
+function add_event(){
+  var lang = input.value.trim();
+  if(lang === ''){
+  input.value = '';
     return false;
   }
-  clear.onclick = function(){
-    var li_list = document.querySelectorAll('li');
-    for(var i = 0, l=li_list.length;i<l; i++){
-        ul.removeChild(li_list[i]);
+  var li = document.createElement('li');
+  var select = document.createElement('input');
+  var list_label = document.createElement('label');
+  list_label.setAttribute('class','list_label');
+  select.setAttribute('type','checkbox');
+  select.setAttribute('class','select');
+  list_label.textContent = input.value;
+  ul.appendChild(li);
+  li.appendChild(list_label);
+  li.appendChild(select);
+  input.value = '';
+  return false;
+}
+  input.onkeypress = function enter(e){
+    if(e.keyCode === 13){
+      add_event()
+      return false;
     }
+  }
+  add.onclick = add_event;
+  clear.onclick = function(){
+    // var li_list = document.querySelectorAll('li');
+    // for(var i = 0, l=li_list.length;i<l; i++){
+    //     ul.removeChild(li_list[i]);
+    // }
+    ul.textContent="";
     return false;
   }
   delet.onclick = function(){
@@ -75,5 +85,4 @@
           }
       }
   }
-  console.log(todobox);
 }(window,window.document));

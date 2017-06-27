@@ -1,0 +1,6 @@
+#comments:not(:target){
+    display: none;
+}
+#comments:target{
+    display: block;
+}

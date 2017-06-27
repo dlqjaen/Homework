@@ -1,0 +1,48 @@
+body{
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+a:link, a:visited{
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    background: rgba(255,255,255,0.5);
+}
+h1{
+    padding: 20px 0;
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px dashed white;
+}
+ul, ol{
+    padding-left: 0;
+    margin: 0;
+}
+li{
+    padding: 0 30px;
+    margin: 5px 0;
+    font-size: 1.4rem;
+    display: block;
+}
+a{
+    padding: 20px 0;
+    display: block;
+}
+.secter{
+    float: left;
+    width: 50%;
+    height: 100vh;
+}
+.give{
+     background: rgba(255,255,255,0.5);
+     border-radius: 10px;
+}
+.sec1{
+    background: rgb(50, 171, 192);
+}
+.sec2{
+    background: rgb(242, 131, 107);
+}
