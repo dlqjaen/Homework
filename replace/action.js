@@ -18,7 +18,7 @@
         if(!give){
             alert('Section1의 요소를 선택해 주세요.')
         }
-        give_text = give.textContent;
+        var give_text = give.textContent;
         var change_text = this.textContent;
         this.textContent = give_text;
         give.textContent = change_text;
