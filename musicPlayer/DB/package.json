@@ -1,0 +1,58 @@
+{
+  "music_info": [
+    {
+      "src": "music/아이유-밤편지.mp3",
+      "singer": "아이유",
+      "title": "밤편지",
+      "img": "music/아이유.jpeg"
+    },
+    {
+      "src": "music/에일리-첫눈처럼 너에게 가겠다.mp3",
+      "singer": "에일리",
+      "title": "첫눈처럼 너에게 가겠다",
+      "img": "music/에일리.jpeg"
+    },
+    {
+      "src": "music/아이유-팔레트 (Feat. G-DRAGON).mp3",
+      "singer": "아이유",
+      "title": "팔레트(Feat. G-DRAGON)",
+      "img": "music/아이유.jpeg"
+    },
+    {
+      "src": "music/오혁-공드리 (feat. 김예림).mp3",
+      "singer": "오혁",
+      "title": "공드리 (feat. 김예림)",
+      "img": "music/오혁.jpeg"
+    },
+    {
+      "src": "music/혁오-TOMBOY.mp3",
+      "singer": "혁오",
+      "title": "TOMBOY",
+      "img": "music/혁오.jpeg"
+    },
+    {
+      "src": "music/MC 몽-너에게 쓰는 편지.mp3",
+      "singer": "MC몽",
+      "title": "너에게 쓰는 편지",
+      "img": "music/MC_몽.jpg"
+    },
+    {
+      "src": "music/Drake-Madiba Riddim.mp3",
+      "singer": "Drake",
+      "title": "Mediba Riddim",
+      "img": "music/Drake.jpg"
+    },
+    {
+      "src": "music/검정치마-한시 오분 (1_05).mp3",
+      "singer": "검정치마",
+      "title": "한시 오분(1_05)",
+      "img": "music/검정치마.jpg"
+    },
+    {
+      "src": "music/비프리-Hot Summer.mp3",
+      "singer": "비프리",
+      "title": "Hot Summer",
+      "img": "music/비프리.jpg"
+    }
+  ]
+}
