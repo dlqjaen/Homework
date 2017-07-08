@@ -1,0 +1,44 @@
+@import "settings";
+@import "mixin";
+@import "placeholder";
+
+.banner {
+    position: relative;
+    padding-top: $baseline-height * 4;
+    .banner-view {
+        
+        // background: url("../images/banner/banner-01.jpg") no-repeat;
+        // background-size: cover;
+         height: $baseline-height * 21;
+         box-sizing: border-box;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .anchor-box {
+        left: 50%;
+        bottom: -($baseline-height + $baseline-height / 4 + 10);
+        transform: translateX(-50%);
+        position: absolute;
+        $anchor-bg-color: #ccc;
+        $actived-anchor-bg-color: #bd1d31;
+        @include clearfix;
+        span {
+            float: left;
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $anchor-bg-color;
+            margin-right: 10px;
+            @include init-last-mgr;
+            cursor: pointer;
+
+            &.actived-achor-btn{
+                background: $actived-anchor-bg-color;
+            }
+
+        }
+    }
+}

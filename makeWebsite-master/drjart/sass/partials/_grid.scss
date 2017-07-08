@@ -1,0 +1,37 @@
+@import "mixin";
+//header
+
+.grid{
+    width: 100%;
+    box-sizing: border-box;
+    @include clearfix;
+}
+.col{  
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    min-height: 50px;
+    background: rgba(255,255,0,0.3);
+    
+}
+
+$col-map: (mobile: 8, tablet: 12, desktop: 16);
+
+@each $device, $column in $col-map{
+    @include content-column($device){
+        @for $i from 1 through $column{
+            .#{$device}-col-#{$i}{
+                width: 100% / $column * $i;
+            }
+            .#{$device}-offset-#{$i}{
+                margin-left: 100% / $column * $i;
+            }
+            .#{$device}-push-#{$i}{
+                left: 100% / $column * $i;
+            }
+            .#{$device}-pull-#{$i}{
+                right: 100% / $column * $i;
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+@import "settings";
+@import "mixin";
+@import "placeholder";
+
+
+.tip {
+    margin-top: $baseline-height * 2;
+    .tip-heading {
+        @extend %heading-property;
+    }
+    .tip-group {
+        position: relative;
+    }
+    .anchor-box {
+        position: absolute;
+        $anchor-bg-color: #ccc;
+        $actived-anchor-bg-color: #bd1d31;
+        @include clearfix;
+        span {
+            float: left;
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $anchor-bg-color;
+            margin-right: 10px;
+            @include init-last-mgr;
+            cursor: pointer;
+
+            &.actived-achor-btn{
+                background: $actived-anchor-bg-color;
+            }
+
+        }
+        right: $half-gutter-width;
+        top : -($baseline-height + $baseline-height/4*3);
+    }
+}
+.tip-list {
+    @include init-list-property;
+    a {
+        display: block;
+        z-index: 999;
+        height: $baseline-height * 11;
+        &:hover, &:focus {
+            border: 2px solid #bd1d31;
+        }
+    }
+    img {
+        @extend %responsive-object;
+    }
+}

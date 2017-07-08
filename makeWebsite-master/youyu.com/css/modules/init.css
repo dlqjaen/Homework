@@ -1,0 +1,48 @@
+/*! init.css @ 2017, yamoo9.net */
+
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  font-size: 1.4rem; /* 14px */
+  line-height: 1.5;  /* 21px */
+  font-family: "NanumSquareOTF";
+}
+
+a {
+  text-decoration: none;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+*[class$="hidden"] {
+    overflow: hidden; 
+    position: absolute; 
+    clip: rect(0 0 0 0); /* IE 6,7 */ 
+    clip: rect(0,0,0,0); 
+    width: 1px; 
+    height: 1px; 
+    margin: -1px; 
+    border: 0; 
+    padding: 0;   
+}
+.skip-nav {
+  position: absolute;
+  left: -9999px;
+  top: 5px;
+}
+.skip-nav:focus {
+  padding: 5px 15px;
+  background: #000;
+  color: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  
+}
+

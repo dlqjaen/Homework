@@ -1,0 +1,51 @@
+@import "placeholder";
+
+@mixin clearfix{
+    &::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+@mixin is-mg{
+    &.row, &.col {
+        margin-top: 0;
+        margin-left: 0;    
+    }
+    &:not(.row), &:not(.col) {
+        margin: 0;
+    } 
+}
+@mixin init-list-property{
+    
+    list-style: none;
+    padding-left: 0;
+    
+    @include is-mg;
+}
+@mixin init-last-mgr{
+    &:last-child {
+        margin-right: 0;
+    }
+}
+@mixin init-first-mgl{
+    &:last-child {
+        margin-left: 0;
+    }
+}
+@mixin init-form {
+    fieldset {
+        border: none;
+        padding: 0;
+        @include is-mg;
+    }
+
+    legend {
+        @extend %a11y-hidden;
+    }
+}
+@mixin init-button {
+    border: none;
+    padding: 0;
+    @include is-mg;
+}

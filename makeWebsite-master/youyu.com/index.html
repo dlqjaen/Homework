@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>shoppingmall &lt; yuyu.com</title>
+  <link rel="stylesheet" href="./css/modules/init.css">
+  <link rel="stylesheet" href="./css/stylesheet.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+<body class="show-grid">
+  <a class="skip-nav" href="#main">본문바로가기 영역</a>
+  <header class="header">
+    <h1 class="a11y-hidden">헤더영역입니다.</h1>
+    <div class="header-inner container"> 
+      <div class="row">
+        <a class="logo col is-3" href="#">
+          <div class="img-box">
+            <img src="images/header/logo.png" alt="로고 이미지">
+          </div>
+        </a>
+        <form action="javascript:click('전송하였습니다.');" class="search col is-4 is-offset-1">
+          <!--<h2 class="search-heading">검색 영역입니다.</h2>-->
+          <fieldset>
+            <legend>검색 영역입니다.</legend>
+            <label for="search-input">검색</label>
+            <input type="text" id="search-input" placeholder="검색어를 입력하세요." aria-describedby="placeholder-search">
+            <span id="placeholder-search" class="a11y-hidden">검색어를 입력하세요.</span>
+            <button class="search-btn" type="submit"></button>
+          </fieldset>
+        </form>
+        <div class="user-info col is-2 is-offset-2" aria-labelledby="user-info">
+          <h2 id="user-info" class="a11y-hidden">유저정보 영역입니다.</h2>
+          <ul>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">로그인</a></li>
+          </ul>
+        </div>
+      </div>
+      <nav class="navigation row" aria-labelledby="navigation">
+        <h2 id="navigation" class="a11y-hidden">메뉴 영역입니다.</h2>
+        <div class="col is-12">
+            <ul>
+              <li><a href="#" label="main">main</a></li>
+              <li><a href="#" label="brand">brand</a></li>
+              <li><a href="#" label="special">special</a></li>
+              <li><a href="#" label="outer">outer</a></li>
+              <li><a href="#" label="tops">tops</a></li>
+              <li><a href="#" label="bottom">bottom</a></li>
+              <li><a href="#" label="dress">dress</a></li>
+              <li><a href="#" label="shoes">shoes</a></li>
+              <li><a href="#" label="bag">bag</a></li>
+              <li><a href="#" label="acc">acc</a></li>
+              <li><a href="#" label="summer">summer</a></li>
+              <li><a href="#" label="etc">etc</a></li>
+            </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- s:filter -->
+    <div class="filter" aria-describedby="filter-descript">
+      <div class="container">
+        <p id="filter-descript">연령별, 스타일별로 제품을 필터링합니다.</p>
+         <div class="row">
+          <a class="filter-btn col is-2 is-offset-5" role="button">
+            <span></span>필터를 설정하세요
+          </a>
+         </div> 
+        <!-- e:filter-content -->
+        <form action="javascript:click('스타일 필터링합니다.')" role="group" class="filter-content row">
+          <fieldset>
+            <legend>연령대와 스타일을 선택합니다.</legend>
+            <!-- s:age -->
+            <div class="age row" role="group" aria-labelledby="label-age">
+              <div class="title col is-1">
+                <span id="label-age">연령대</span>
+              </div>
+              <div class="col is-11">
+                <ul class="filter-list">
+                  <li>
+                    <input type="checkbox" id="teen" name="age" value="teen" aria-label="10대">
+                    <label for="teen">10대</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="twenty" name="age" value="twenty" aria-label="20대">
+                    <label for="twenty">20대</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="thirty" name="age" value="thirty" aria-label="30대">
+                    <label for="thirty">30대</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- e:age -->
+            <!-- s:style -->
+            <div class="style row" role="group" aria-labelledby="label-style">
+              <div class="title col is-1">
+                <span id="label-style">스타일</span>
+              </div>
+              <div class="col is-11">
+                <ul class="filter-list">
+                  <li>
+                    <input type="checkbox" id="girl" name="style" value="girl" aria-label="소녀룩">
+                    <label for="girl">소녀룩</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="modern" name="style" value="modern" aria-label="모던시크">
+                    <label for="modern">모던시크</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="simple-beige" name="style" value="simple-beige" aria-label="심플베이지">
+                    <label for="simple-beige">심플베이지</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="romantic" name="style" value="romantic" aria-label="로맨틱">
+                    <label for="romantic">로맨틱</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="office" name="style" value="office" aria-label="오피스룩">
+                    <label for="office">오피스룩</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="campus" name="style" value="campus" aria-label="캠퍼스룩">
+                    <label for="campus">캠퍼스룩</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="vintage" name="style" value="vintage" aria-label="빈티지">
+                    <label for="vintage">빈티지</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="training" name="style" value="training" aria-label="트레이닝">
+                    <label for="training">트레이닝</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- e:style -->
+            <!-- s:btn-box -->
+            <div class="btn-box row">
+              <div class="btn-inner-box col is-3 is-offset-5">
+                <button class="reset-btn" type="button">초기화</button>
+                <button class="submit-btn" type="submit">필터 선택 완료</button>
+              </div>
+            </div>
+            <!-- e:btn-box -->
+          </fieldset>
+        </form>
+      </div>
+     
+      <script>
+        $(function(){
+          
+          var filter_flag = false;
+
+          $(".filter-btn").on("click", function(e){
+            // e.preventDefault();
+            if (!filter_flag){
+              $(".filter").css("height", "231px");
+              console.log("down");
+              filter_flag = true;
+            } else {
+              $(".filter").css("height", "42px");
+              console.log("up");
+              filter_flag = false;
+            }
+          });
+        });
+      </script>
+      <!-- e:filter-content -->
+    </div>
+    <!-- e:filter -->
+  <main id="main" class="main">
+    <h1 class="a11y-hidden">메인 영역입니다.</h1>
+    <!-- s:banner -->
+    <div class="banner container" aria-labelledby="label-banner">
+      <h2 id="label-banner" class="a11y-hidden">배너 영역입니다.</h2>
+      <div class="row">
+        <div class="banner-view col is-12">
+          <img src="images/banner/banner-01.jpg" tabindex="0" alt="배너 이미지">
+          <div class="anchor-box">
+            <span class="actived-achor-btn" role="button" tabindex="0" aria-label="첫번째 배너"></span>
+            <span role="button" tabindex="0" aria-label="두번쨰 배너"></span>
+            <span role="button" tabindex="0" aria-label="세번쨰 배너"></span>
+            <span role="button" tabindex="0" aria-label="네번쨰 배너"></span>
+            <span role="button" tabindex="0" aria-label="다섯번쨰 배너"></span>
+            <span role="button" tabindex="0" aria-label="여섯번쨰 배너"></span>
+            <span role="button" tabindex="0" aria-label="일곱번쨰 배너"></span>
+            <span role="button" tabindex="0" aria-label="여덜번쨰 배너"></span>
+            <span role="button" tabindex="0" aria-label="아홉번쨰 배너"></span>
+            <span role="button" tabindex="0" aria-label="열번쨰 배너"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- e:banner -->
+    <!-- s:bestseller -->
+    <div class="best-seller container" aria-labelledby="label-bestseller">
+      <div class="row">
+        <h2 id="label-bestseller" class="best-seller-heading col is-2">베스트 셀러</h2>
+      </div>
+      <ul class="best-seller-list row">
+        <li class="col is-3">
+          <a href="#" role="group" aria-label="zemma world puppy 코튼니트">
+            <figure>
+              <div class="img-box">
+                <img src="images/best-seller/bs-seller-01.jpg" alt="zemma world puppy 코튼니트">
+              </div>
+              <figcaption>
+                <strong class="best-seller-title">Zemma World</strong>
+                Puppy-코튼니트
+              </figcaption>
+            </figure>
+            <div class="price_like">
+              <span class="price" tabindex="0">39,000원</span>
+              <div class="like-btn like-actived" role="button" tabindex="0" aria-label="좋아요"></div>
+            </div>
+          </a>
+        </li>
+        <li class="col is-3">
+          <a href="#" role="group" aria-label="myblin 버튼 체크 원피스">
+            <figure>
+              <div class="img-box">
+                <img src="images/best-seller/bs-seller-02.jpg" alt="myblin 버튼 체크 원피스">
+              </div>
+              <figcaption>
+                <strong class="best-seller-title">myblin</strong>
+                버튼 체크 원피스
+              </figcaption>
+            </figure>
+            <div class="price_like">
+              <span class="price" tabindex="0">41,000원</span>
+              <div class="like-btn" role="button" tabindex="0" aria-label="좋아요"></div>
+            </div>
+          </a>
+        </li>
+        <li class="col is-3">
+          <a href="#" role="group" aria-label="bullan girl 아미라벨맨투맨">
+            <figure>
+              <div class="img-box">
+                <img src="images/best-seller/bs-seller-03.jpg" alt="bullan girl 아미라벨맨투맨">
+              </div>
+              <figcaption>
+                <strong class="best-seller-title">BULLAN GIRL</strong>
+                아미라벨맨투맨
+              </figcaption>
+            </figure>
+            <div class="price_like">
+              <span class="price" tabindex="0">12,500원</span>
+              <div class="like-btn" role="button" tabindex="0" aria-label="좋아요"></div>
+            </div>
+          </a>
+        </li>
+        <li class="col is-3">
+          <a href="#" role="group" aria-label="MINIBONG Night 스키니팬츠">
+            <figure>
+              <div class="img-box">
+                <img src="images/best-seller/bs-seller-04.jpg" alt="MINIBONG Night 스키니팬츠">
+              </div>
+              <figcaption>
+                <strong class="best-seller-title">MINIBONG</strong>
+                Night-스키니팬츠
+              </figcaption>
+            </figure>
+            <div class="price_like">
+              <span class="price" tabindex="0">29,900원</span>
+              <div class="like-btn like-actived" role="button" tabindex="0"></div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- e:bestseller -->
+    <!-- s:brand -->
+    <div class="brand container" aria-labelledby="label-brand">
+      <div id="label-brand" class="row">
+        <h2 class="brand-heading col is-2">브랜드</h2>
+      </div>
+      <div class="brand-group row">
+        <ul class="brand-list row is-nesing">
+          <li class="col is-3">
+            <a href="#" role="group" aria-label="mixxmix">
+              <img src="images/brand/brand-01.jpg" alt="mixxmix">
+              <span class="title">mixxmix</span>
+              <div class="brand-like-box">
+                <span>01.mixxmix</span>
+                <div class="brand-like-btn" role="button" tabindex="0" aria-label="좋아요"></div>
+              </div>
+            </a>
+          </li>
+          <li class="col is-3">
+            <a href="#" role="group" aria-label="reine">
+              <img src="images/brand/brand-02.jpg" alt="reine">
+              <span class="title">REINE</span>
+              <div class="brand-like-box">
+                <span>02.REINE</span>
+                <div class="brand-like-btn" role="button" tabindex="0" aria-label="좋아요"></div>
+              </div>
+            </a>
+          </li>
+          <li class="col is-3">
+            <a href="#" role="group" aria-label="reine">
+              <img src="images/brand/brand-03.jpg" alt="banhala">
+              <span class="title">BANHALA</span>
+              <div class="brand-like-box">
+                <span>03.BANHALA</span>
+                <div class="brand-like-btn" role="button" tabindex="0" aria-label="좋아요"></div>
+              </div>
+            </a>
+          </li>
+          <li class="col is-3">
+            <a href="#" role="group" aria-label="cherrykoko">
+              <img src="images/brand/brand-04.jpg" alt="cherrykoko">
+              <span class="title">CHERRYKOKO</span>
+              <div class="brand-like-box">
+                <span>04.CHERRYKOKO</span>
+                <div class="brand-like-btn" role="button" tabindex="0" aria-label="좋아요"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <div class="brand-btn">
+          <button class="left" aria-label="prev"></button>
+          <button class="right" aria-label="next"></button>
+        </div>
+      </div>
+    </div>
+    <!-- e:brand -->
+    <!-- s:brandnew -->
+    <div class="brandnew container" aria-labelledby="label-brandnew">
+      <div class="row">
+        <h2 id="label-brandnew" class="brandnew-heading col is-2">신상품</h2>
+      </div>
+      <ul class="brandnew-list row">
+        <li class="col is-3">
+          <a href="#" role="group" aria-label="Monobabies 엘렌 니트 원피스">
+            <figure>
+              <div class="img-box">
+                <img src="images/brandnew/brandnew-1.jpg" alt="Monobabies 엘렌 니트 원피스">
+              </div>
+              <figcaption>
+                <strong class="brandnew-title">Monobabies</strong>
+                엘렌 니트원피스
+              </figcaption>
+            </figure>
+            <div class="price_like">
+              <span class="price" tabindex="0">55,500원</span>
+              <div class="like-btn like-actived" role="button" tabindex="0" aria-label="좋아요"></div>
+            </div>
+          </a>
+        </li>
+        <li class="col is-3">
+          <a href="#" role="group" aria-label="From Beginning Ohkoos vintage knit">
+            <figure>
+              <div class="img-box">
+                <img src="images/brandnew/brandnew-2.jpg" alt="From Beginning Ohkoos vintage knit">
+              </div>
+              <figcaption>
+                <strong class="brandnew-title">From Beginning</strong>
+                Ohkoos vintage Knit
+              </figcaption>
+            </figure>
+            <div class="price_like">
+              <span class="price" tabindex="0">26,600원</span>
+              <div class="like-btn" role="button" tabindex="0" aria-label="좋아요"></div>
+            </div>
+          </a>
+        </li>
+        <li class="col is-3">
+          <a href="#" role="group" aria-label="Zemma Wrold Tied 골지니트">
+            <figure>
+              <div class="img-box">
+                <img src="images/brandnew/brandnew-3.jpg" alt="Zemma Wrold Tied 골지니트">
+              </div>
+              <figcaption>
+                <strong class="brandnew-title">Zemma World</strong>
+                Tied-골지니트
+              </figcaption>
+            </figure>
+            <div class="price_like">
+              <span class="price" tabindex="0">22,000원</span>
+              <div class="like-btn" role="button" tabindex="0" aria-label="좋아요"></div>
+            </div>
+          </a>
+        </li>
+        <li class="col is-3">
+          <a href="#" role="group" aria-label="Buckle Wrap mini skirt">
+            <figure>
+              <div class="img-box">
+                <img src="images/brandnew/brandnew-4.jpg" alt="Buckle Wrap mini skirt">
+              </div>
+              <figcaption>
+                <strong class="brandnew-title">daily monday</strong>
+                Buckle Wrap mini skirt
+              </figcaption>
+            </figure>
+            <div class="price_like">
+              <span class="price" tabindex="0">27,000원</span>
+              <div class="like-btn like-actived" role="button" tabindex="0" aria-label="좋아요"></div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- e:brandnew -->
+    <!-- s:tip -->
+    <div class="tip container" aria-labelledby="label-tip">
+      <div class="row">
+        <h2 id="label-tip" class="tip-heading col is-2">언니의 팁</h2>
+      </div>
+      <div class="tip-group row">
+        <ul class="tip-list row">
+          <li class="col is-4">
+            <a href="#" role="button" aria-label="활용만점 가을원피스">
+              <img src="images/tip/product-1.jpg" alt="활용만점 가을원피스">
+            </a>
+          </li>
+          <li class="col is-4">
+            <a href="#" role="button" aria-label="가을엔 체크무늬! 지금 코디 확인하기">
+              <img src="images/tip/product-2.jpg" alt="가을엔 체크무늬! 지금 코디 확인하기">
+            </a>
+          </li>
+          <li class="col is-4">
+            <a href="#" role="button" aria-label="가볍게 들기 좋은 데일리 백">
+              <img src="images/tip/product-3.jpg" alt="가볍게 들기 좋은 데일리 백">
+            </a>
+          </li>
+        </ul>
+        <div class="anchor-box">
+          <span role="button" tabindex="0"></span>
+          <span role="button" tabindex="0"></span>
+          <span role="button" tabindex="0"></span>
+          <span role="button" tabindex="0"></span>
+          <span role="button" tabindex="0"></span>
+          <span role="button" tabindex="0"></span>
+          <span role="button" tabindex="0"></span>
+          <span role="button" tabindex="0"></span>
+          <span class="actived-achor-btn" role="button" tabindex="0"></span>
+        </div>
+      </div>
+    </div>
+    <!-- e:tip -->
+    <!-- s:best-review -->
+    <div class="best-review container" aria-labelledby="label-bestreview">
+      <div class="row">
+        <h2 id="label-bestreview" class="best-review-heading col is-2">베스트리뷰</h2>
+      </div>
+      <ul class="best-review-list row">
+        <li class="col is-2">
+          <a href="#" role="group" aria-label="따뜻해줘 가디건">
+            <figure>
+              <div class="img-box">
+                <img src="images/best-review/bs-product-01.jpg" alt="가디건">
+              </div>
+              <figcaption>
+                <strong class="best-review-title">따뜻해줘 가디건</strong>
+                배송은 쇼핑몰에서 입고가 늦어져서 ...
+              </figcaption>
+            </figure>
+            <div class="price_like">
+              <span class="price" tabindex="0">31,900원</span>
+              <div class="like-btn like-actived" role="button" tabindex="0" aria-label="좋아요"></div>
+            </div>
+            <div class="gpa">
+              <span class="actived-gpa-btn" role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+            </div>
+          </a>
+        </li>
+        <li class="col is-2">
+          <a href="#" role="group" aria-label="버클트임박시후드">
+            <figure>
+              <div class="img-box">
+                <img src="images/best-review/bs-product-02.jpg" alt="버클트임박시후드">
+              </div>
+              <figcaption>
+                <strong class="best-review-title">버클트임박시후드</strong>
+                후기를 너무 늦게었네요ㅠ딱 제가 ...
+              </figcaption>
+            </figure>
+            <div class="price_like">
+              <span class="price" tabindex="0">30,600원</span>
+              <div class="like-btn" role="button" tabindex="0" aria-label="좋아요"></div>
+            </div>
+            <div class="gpa"> 
+              <span class="actived-gpa-btn" role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+            </div>
+          </a>
+        </li>
+        <li class="col is-2">
+          <a href="#" role="group" aria-label="Chic 자켓">
+            <figure>
+              <div class="img-box">
+                <img src="images/best-review/bs-product-03.jpg" alt="Chic 자켓">
+              </div>
+              <figcaption>
+                <strong class="best-review-title">Chic-자켓</strong>
+                어깨가 좀 있는 편이어서 오버핏으...
+              </figcaption>
+            </figure>
+            <div class="price_like">
+              <span class="price" tabindex="0">49,000원</span>
+              <div class="like-btn like-actived" role="button" tabindex="0" aria-label="좋아요"></div>
+            </div>
+            <div class="gpa">
+              <span class="actived-gpa-btn" role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+            </div>
+          </a>
+        </li>
+        <li class="col is-2">
+          <a href="#" role="group" aria-label="마실로 루즈핏 니트">
+            <figure>
+              <div class="img-box">
+                <img src="images/best-review/bs-product-04.jpg" alt="마실로 루즈핏 니트">
+              </div>
+              <figcaption>
+                <strong class="best-review-title">마실로 루즈핏 니...</strong>
+                베이지색상 가디건 필요했었는데 마침...
+              </figcaption>
+            </figure>
+            <div class="price_like">
+              <span class="price" tabindex="0">19,000원</span>
+              <div class="like-btn" role="button" tabindex="0" aria-label="좋아요"></div>
+            </div>
+            <div class="gpa">
+              <span class="actived-gpa-btn" role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+            </div>
+          </a>
+        </li>
+        <li class="col is-2">
+          <a href="#" role="group" aria-label="멜라니 트렌치 코트">
+            <figure>
+              <div class="img-box">
+                <img src="images/best-review/bs-product-05.jpg" alt="멜라니 트렌치 코트">
+              </div>
+              <figcaption>
+                <strong class="best-review-title">멜라니 트렌치 코트</strong>
+                Lorem ipsum dolor sit amet,
+              </figcaption>
+            </figure>
+            <div class="price_like">
+              <span class="price" tabindex="0">19,000원</span>
+              <div class="like-btn" role="button" tabindex="0" aria-label="좋아요"></div>
+            </div>
+            <div class="gpa">
+              <span class="actived-gpa-btn" role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+            </div>
+          </a>
+        </li>
+        <li class="col is-2">
+          <a href="#" role="group" aria-label="Luci 브이넥니트">
+            <figure>
+              <div class="img-box">
+                <img src="images/best-review/bs-product-06.jpg" alt="Luci 브이넥니트">
+              </div>
+              <figcaption>
+                <strong class="best-review-title">Luci-브이넥니트</strong>
+                노랑노랑하니 봄분위기 나고좋아...
+              </figcaption>
+            </figure>
+            <div class="price_like">
+              <span class="price" tabindex="0">24,000원</span>
+              <div class="like-btn like-actived" role="button" tabindex="0" aria-label="좋아요"></div>
+            </div>
+            <div class="gpa">
+              <span class="actived-gpa-btn" role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+              <span role="button"></span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- e:best-review -->
+  </main>
+  <footer class="footer">
+    <!-- s:footer-user-info -->
+    <h1 class="a11y-hidden">푸터영역</h1>
+    <div class="footer-user-info" aria-labelledby="label-userInfo">
+      <h2 id="label-userInfo" class="a11y-hidden">사용자이용정보</h2>
+      <div class="container">
+        <div class="row">
+          <ul class="footer-user-info-list col is-7">
+            <li>
+              <a href="#">YOUYU 소개</a>
+            </li>
+            <li>
+              <a href="#">통합배송</a>
+            </li>
+            <li>
+              <a href="#">고객센터</a>
+            </li>
+            <li>
+              <a href="#">이용약관,개인정보</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- e:footer-user-info -->
+    <!-- s:footer-contents -->
+    <div class="footer-contents container">
+      <div class="row">
+        <div class="col is-10" aria-labelledby="label-companyInfo">
+          <h2 id="label-companyInfo" class="a11y-hidden">회사정보</h2>
+          <div class="row is-nesting">
+            <!-- s:company-info -->
+            <ul class="company-info col is-7">
+              <li>
+                <span>
+                  <strong>Company.</strong>
+                  YOUYU
+                </span>
+              </li>
+              <li>
+                <span>
+                  <strong>대표이사.</strong>
+                  이정희
+                </span>
+              </li>
+              <li>
+                <span>
+                  <strong>개인정보관리책임자.</strong>
+                  이정희
+                </span>
+              </li>
+              <li>
+                <span>
+                  <strong>사업자번호.</strong>
+                  123-45-67890
+                </span>
+              </li>
+              <li>
+                <span>
+                  <strong>통신판매업신고.</strong>
+                  2016-성남분당-1234
+                </span>
+              </li>
+              <li>
+                <span>
+                  <strong>주소.</strong>
+                  경시 성남시 분당구 판교역로 221 102호
+                </span>
+              </li>
+              <li>
+                <span>
+                  <strong>대표번호.</strong>
+                  1234-5678
+                </span>
+              </li>
+            </ul>
+          </div>
+          <!-- e:company-info -->
+          <!-- s:copyright -->
+          <div class="copyright row is-nesting">
+            <p class="col is-4">
+              Copyright &copy; 2016 YOUYU Co,.Ltd.All rights reserved
+            </p>
+          </div>
+          <!-- e:copyright -->
+          <!-- s:sns -->
+          <div class="sns-list row is-nesting">
+            <ul class="col is-5">
+              <li>
+                <a class="webchat square" href="#">
+                  <img class="center-img" src="images/footer/webchat.png" alt="webchat">
+                </a>
+              </li>
+              <li>
+                <a class="taobao square " href="#">
+                  <img class="center-img" src="images/footer/taobao.png" alt="taobao">
+                </a>
+              </li>
+              <li>
+                <a class="facebook square" href="#">
+                  <img class="center-img" src="images/footer/facebook.png" alt="facebook">
+                </a>
+              </li>
+              <li>
+                <a class="weibo square" href="#">
+                  <img class="center-img" src="images/footer/weibo.png" alt="weibo">
+                </a>
+              </li>
+              <li>
+                <a class="square" href="#">
+                  <img class="center-img" src="images/footer/instagram.png" alt="square">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/footer/partner.png" alt="">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- e:sns -->
+        </div>
+        <div class="col is-2" aria-labelledby="label-cs">
+          <!-- s:cs -->
+          <div class="cs">
+            <h2 id="label-cs" class="cs-title">고객센터</h2>
+            <div class="cs-group">
+              <strong class="tel">
+                1234-5678
+              </strong>
+              <ul class="cs-time">
+                <li>월~금 11AM ~ 6PM</li>
+                <li>LUNCH 12:30 ~ 1:30PM</li>
+              </ul>
+            </div>
+          </div>
+          <!-- e:cs -->
+        </div>
+      </div>
+      
+    </div>
+    <!-- e:footer-contents -->
+  </footer>
+<script src="./js/toggleGrid.js"></script>
+</body>
+</html>

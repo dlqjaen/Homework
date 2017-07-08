@@ -1,0 +1,43 @@
+@mixin init-list-style($property, $value) {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+
+    #{$property}: $value;
+    
+}
+
+// 블럭 박스 사이즈 세팅
+// @include setSize(200px, 300px);
+@mixin setSize($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin center-content($method) {
+
+    @if $method == position {
+        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    } @else if $method == flex {
+
+        display: flex;
+        justify-content: center;
+        & > * {
+            align-items: center;
+        }
+
+    } @else if $method == margin {
+        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -50%;
+        margin-left: -50%;
+        
+    }
+}

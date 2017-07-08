@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ko-KR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,21 +9,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 </head>
-
 <body>
     <div class="container">
         <div class="player">
             <div class="cover"></div>
-            <div class="player_title">
+            <div class="player-title">
                 <h1>Title</h1>
                 <h3>Singger</h3>
+                <label for="play-list" class="a11y-hidden">Play List</label>
+                <button id="play-list" class="" type="button"><i class="fa fa-list-ul" aria-hidden="true"></i></button>
             </div>
-            <div class="play-time">
+            <div class="play-time control">
                 <span class="current-time"></span>
                 <input class="play-slider" type="range" min="0">
                 <span class="duration-time"></span>
             </div>
-            <div class="music-control">
+            <div class="music-control control1">
                 <label for="prev" class="a11y-hidden">prev</label>
                 <button id="prev" type="button"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
                 <label for="play" class="a11y-hidden"></label>
@@ -32,7 +32,7 @@
                 <label for="next" class="a11y-hidden">next</label>
                 <button id="next" type="button"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
             </div>
-            <div class="music-control-2">
+            <div class="music-control control-2">
                 <label for="shuffle" class="a11y-hidden">shuffle</label>
                 <button id="shuffle" type="button"><i class="fa fa-random" aria-hidden="true"></i></button>
                 <label for="repeat" class="a11y-hidden">shuffle</label>
@@ -44,9 +44,10 @@
                 </div>
             </div>
         </div>
+        <div class="play-list">
+        </div>
     </div>
     <script defer src="jquery.ajax.min.js"></script>
     <script defer src="play.js"></script>
 </body>
-
 </html>

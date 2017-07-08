@@ -1,0 +1,40 @@
+//clearfix
+@mixin clearfix(){
+    &::after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+
+//header
+@mixin header-mobile(){
+    @media screen and (max-width: 1024px){
+        @content;
+    }
+}
+@mixin header-desktop(){
+    @media screen and (min-width: 1025px){
+        @content;
+    }
+}
+
+//make content grid
+
+@mixin content-column($value){
+
+    @if $value == mobile{
+        @media screen and (max-width: 767px){
+            @content;
+        }
+    } @else if $value == tablet{
+        @media screen and (min-width: 768px) and (max-width: 1024px){
+            @content;
+        }
+    } @else if $value == desktop{
+        @media screen and (min-width: 1025px){
+            @content;
+        }
+    } 
+}

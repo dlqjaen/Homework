@@ -1,0 +1,92 @@
+@import "settings";
+@import "mixin";
+@import "placeholder";
+
+
+.best-review {
+    margin-top: $baseline-height * 2;
+    box-sizing: border-box;
+    .best-review-heading {
+        @extend %heading-property;
+    }
+}
+.best-review-list {
+    @include init-list-property;
+
+    a {
+        display: block;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        padding: 20px;
+        &:hover, &:focus {
+            border: 2px solid #bd1d31;
+        }
+    }
+    figure {
+        margin: 0;
+        height: $baseline-height * 10;
+    }
+    .img-box {
+        height: $baseline-height * 6;
+        img {
+            display: inline-block;
+            @extend %responsive-object;
+        }
+    }
+    figcaption {
+        margin-top: $baseline-height;
+        text-align: left;
+        color: #666;
+        strong {
+            display: block;
+            color: #333;
+        }
+        
+    }
+    .price_like {
+        margin-top: $baseline-height;
+        height: $baseline-height;
+        line-height: $baseline-height;
+        position: relative;
+
+        .price {
+            color: #991717;
+            font-size: 1.8rem;
+        }
+        .like-btn {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            @include init-button;
+            width: 21px;
+            height: 21px;
+            background: url("../images/icons/icons.png");
+            background-size: cover;
+            background-position: 0 -106px;
+            cursor: pointer;
+            
+            &.like-actived {
+                background-position: 0 -85px;
+            }
+        }
+    }
+    .gpa {
+        margin-top: $baseline-height;
+        height: $baseline-height;
+        text-align: center;
+        span {
+            display: inline-block;
+            width: 17px;
+            height: 16px;
+            background: url("../images/icons/icons.svg") no-repeat;
+            background-size: cover;
+            background-position: 0 -168px;
+            cursor: pointer;
+
+            &.actived-gpa-btn {
+                background-position: 0 -151px; 
+            }
+        }
+    }
+}

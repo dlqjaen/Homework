@@ -7,13 +7,20 @@ body {
     box-sizing: border-box;
 }
 button{
+    background: transparent;
+    border: 0;
+    order: 0;
     cursor: pointer;
     outline: none;
+    color: #B2AEAF;
+    font-size: 25px;
+    padding: 0 10px;
 }
 i:hover, i:focus{
     color: white;
 }
 h1{
+    width: 80%;
     margin: 30px 0 15px 0;
     font-size: 33px;
     font-weight: 500;
@@ -21,8 +28,16 @@ h1{
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.active{
-    color: rgb(14,172,193);
+h3{
+    margin: 0;
+}
+.a11y-hidden {
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    margin: -1px;
 }
 .play-slider{
     width: 62%;
@@ -30,18 +45,18 @@ h1{
 .container {
     display: block;
     margin: auto;
-    background: #333;
     color: #ddd;
-    border-radius: 10px;
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
     width: 400px;
     position: relative;
     top: 50vh;
     transform: translateY(-50%);
+    transition: all 0.5s ease-in-out;
 }
 .player {
+    border-radius: 10px;
     padding: 30px;
-    /*display: block;*/
+    background: #333;
 }
 .cover{
     background-color: white;
@@ -53,60 +68,33 @@ h1{
     background-repeat: no-repeat;
     background-size: 100% auto;
 }
-.a11y-hidden {
-    clip: rect(0, 0, 0, 0);
-    overflow: hidden;
-    width: 1px;
-    height: 1px;
-    position: absolute;
-    margin: -1px;
+.play-time{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.player-title{
+    position: relative;
+    margin-bottom: 30px;
 }
 .music-control {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 30px 0;
+    margin: 0 0 30px 0;
+}
+#play-list{
+    position: absolute;
+    right: 0;
+    top: 5px;
 }
 #play {
-    background: transparent;
-    border: 0;
-    order: 0;
     font-size: 40px;
-    margin: 0 10px;
-    color: #B2AEAF;
-}
-
-#prev {
-    order: -1;
-    font-size: 25px;
-    margin: 0 10px;
-    color: #B2AEAF;
-    background: transparent;
-    border: 0;
-}
-#next {
-    order: 1;
-    font-size: 25px;
-    margin: 0 10px;
-    color: #B2AEAF;
-    background: transparent;
-    border: 0;
 }
 .music-control-2 {
     display: flex;
-    margin: 30px 20px;
+    margin: 0 0 30px 20px;
     justify-content: space-around;
-}
-.play-time{
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
-}
-#shuffle {
-    font-size: 25px;
-    color: #B2AEAF;
-    background: transparent;
-    border: 0;
 }
 #volume-slider{
     display: inline-block;
@@ -116,16 +104,32 @@ h1{
 }
 #volume{
     font-size: 25px;
-    color: #B2AEAF;
-    background: transparent;
-    border: 0;
 }
 #repeat
 {
     font-size: 25px;
-    color: #B2AEAF;
-    background: transparent;
-    border: 0;
+}
+.play-list{
+    padding: 10px 20px 10px 0;
+    top: 0px;
+    background: #444;
+    position: absolute;
+    right: 0;
+    margin: 0;
+    transition: all 0.5s ease-in-out;
+    border-radius: 0 10px 10px 0;
+    z-index: -1;
+}
+.list-active{
+    transform: translateX(98%);
+}
+.list-item{
+    color : #B2AEAF;
+    padding: 10px 0;
+    cursor: pointer;
+}
+.list-item:hover, .list-item:focus{
+    color: white;
 }
 input[type=range]{
     -webkit-appearance: none;
@@ -158,4 +162,7 @@ input[type=range]:focus {
 
 input[type=range]:focus::-webkit-slider-runnable-track {
     background: #ccc;
+}
+.active{
+    color: rgb(14,172,193);
 }

@@ -1,0 +1,182 @@
+@import "settings";
+@import "mixin";
+@import "placeholder";
+
+
+$default-font-color: #333;
+$emphasize-font-weight: bold;
+
+.footer {
+    margin-top: $baseline-height * 2;
+}
+
+.footer-user-info {
+    background-color: #555;
+    height: $baseline-height * 2;
+}
+.footer-user-info-list {
+    @include clearfix;
+    $a-font-color: #aaa;
+    $a-hover-font-color: #aaa;
+    $a-hover-bg-color: #fff;
+    list-style: none;
+    padding-left: 0;
+    margin-top: $baseline-height / 2;
+    margin-bottom: 0;
+
+    li {
+        float: left;
+        &:last-child {
+            a {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    height: 15px;
+                    width: 1px;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: #aaa;    
+                }
+            }
+        }
+    }
+    a {
+        padding: 5px 40px;
+        color: $a-font-color;
+        position: relative;
+        border-radius: 2px;
+        &:hover, &:focus {
+            background: $a-hover-bg-color;
+            color: $a-hover-font-color;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            height: 15px;
+            width: 1px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #aaa;
+        }
+    }
+}
+
+.footer-contents {
+    margin-top: $baseline-height * 2;
+    position: relative;
+}
+.company-info {
+    @include clearfix;
+    @include init-list-property;
+
+    li {
+        float: left;
+        margin-right: 20px;
+    }
+    span {
+        color: #333;
+        line-height: 21px;
+        font-size: 1.2rem;
+        letter-spacing: -0.03em;
+        strong {
+            font-weight: bold;
+            padding-right: 5px;
+        }
+    }
+}
+
+.copyright {
+    height: $baseline-height;
+    p {
+        font-size: 1.2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: $baseline-height;
+    }
+}
+
+.sns-list {
+    margin-top: $baseline-height;
+    ul {
+        @include init-list-property;
+        height: $baseline-height * 2;
+    }
+    li {
+        float: left;
+        margin-right: 5px;
+        position: relative;
+        top: $baseline-height / 2;
+        $color-map: ("webchat": #2dc100, "taobao": #e8741f, "facebook": #475993, "weibo": #f29600);
+        @each $brand, $color in $color-map {
+            a {
+                &.#{$brand} {
+                    background: $color;
+                }
+            }
+        }
+        &:nth-child(5) {
+            
+            border: 1px solid #aaa;
+            border-radius: 2px;
+            
+            &:hover, &:focus {
+                background: linear-gradient(to bottom, #8121b3 10%, #c43062 50%, #d88341 90%);
+                border: none;
+            }
+        }
+        &:last-child {
+            margin-left: 20px;
+        }
+    }
+    a {
+        box-sizing: border-box;
+        display: block;
+        border-radius: 2px;
+        text-align: center;
+        
+        &.square {
+            width: 26px;
+            height: 26px;
+        }
+        img {
+            
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+            position: relative;
+            &.center-img {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+.cs {
+    .cs-title {
+        margin: 0;
+        font-size: 1.8rem;
+        line-height: $baseline-height;
+    }
+    .tel {
+        display: block;
+        height: $baseline-height * 2;
+        line-height: $baseline-height * 2;
+        color: #bd1d31;
+        font-size: 2.1rem;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+    }
+    .cs-time {
+        @include init-list-property;
+
+        li {
+            height: $baseline-height;
+            line-height: $baseline-height;
+            font-size: 1.2rem;
+        }
+    }
+}

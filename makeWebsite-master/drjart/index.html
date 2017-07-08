@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/drjart.css">
+    <link href="https://fonts.googleapis.com/css?family=Khula:700" rel="stylesheet"> 
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <title>drjart 사이트 만들기</title>
+</head>
+<body>
+    <div class="bg-wrapper">
+        <header class="header">
+            <div class="header-inner">
+                <h2 class="logo">
+                    <a href="#">
+                        <img src="images/drjart_logo320.png" alt="drjart 로고 이미지">
+                    </a>
+                </h2>
+                <a href="#" class="mobile-menubtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <nav>
+                    <ul class="gnb">
+                        <li>
+                            <a href="#">Shop</a>
+                            <ul class="submenu">
+                                <li><a href="#">All Product</a></li>
+                                <li><a href="#">by Solution</a></li>
+                                <li><a href="#">by Item</a></li>
+                                <li><a href="#">by Line</a></li>
+                                <li><a href="#">New Arrival</a></li>
+                                <li><a href="#">Best Seller</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Shop Gift</a>
+                            <ul class="submenu">
+                                <li><a href="#">Shopping Chance</a></li>
+                                <li><a href="#">Special Set</a></li>
+                                <li><a href="#">Limited Edition</a></li>
+                            </ul>  
+                        </li>
+                        <li>
+                            <a href="#">Community</a>
+                            <ul class="submenu">
+                                <li><a href="#">Cica room</a></li>
+                                <li><a href="#">Review</a></li>
+                                <li><a href="#">Beauty Movie</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Consulting</a>
+                            <ul class="submenu">
+                                <li><a href="#">Special Consulting</a></li>
+                                <li><a href="#">How to use</a></li>
+                                <li><a href="#">Ingredient Lab</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Event</a>
+                            <ul class="submenu">
+                                <li><a href="#">전체 이벤트</a></li>
+                                <li><a href="#">문화 이벤트</a></li>
+                                <li><a href="#">이벤트 후기</a></li>
+                                <li><a href="#">당첨자 발표</a></li>
+                                <li><a href="#">종료 이벤트</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Brand</a>
+                            <ul class="submenu">
+                                <li><a href="#">Brand Story</a></li>
+                                <li><a href="#">Brand Movie</a></li>
+                                <li><a href="#">Brand History</a></li>
+                            </ul>
+                        </li>    
+                    </ul>
+                </nav>
+                <a href="#" class="cart">0</a>
+                <div class="join">
+                    <ul>
+                        <li><a href="#">Log in</a></li>
+                        <li><a href="#">Join</a></li>
+                        <li><a href="#">CS Center</a></li>
+                        <li><a href="#">US Site</a></li>
+                    </ul>
+                    <button class="search-btn" type="button"></button>
+                </div>
+            </div>
+        </header>
+        <script>
+            $(function(){
+                $(".mobile-menubtn").on("click",function(){
+                    $("nav").toggleClass("visible");
+                });
+            });
+        </script>
+        <main class="main">
+            <div class="container">
+                <div class="grid" role="group">
+                    <div class="ad col mobile-col-8 tablet-col-12 desktop-col-12">
+                        광고
+                    </div>
+                    <div class="today-pd col mobile-col-4 tablet-col-4 desktop-col-4">
+                        <img class="responsive-object" src="images/today_pd.jpg" alt="오늘의 상품">
+                    </div>
+                    <div class="skin-solution col mobile-col-4 tablet-col-4 desktop-col-16">
+                        <div class="grid">
+                            <div class="skin-img1 col mobile-col-4 tablet-col-4 desktop-col-4">
+                                <img class="responsive-object" src="images/skin_solution1.jpg" alt="민감한 피부를 가지고 계신가요?">
+                            </div>
+                            <div class="skin-img2 col desktop-col-12">
+                                <img class="responsive-object" src="images/skin_solution2.jpg" alt="시카페어 크림(회복크림), 시카페어 리커버(회복커버와 보호), 시카페어 세럼(회복진정세럼), 시카페어 나이트 리페어(회복부스터)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="everybody-wish col mobile-col-4 tablet-col-4 desktop-col-4">
+                        <img class="responsive-object" src="images/wish.jpg" alt="위시 리스트">
+                    </div>
+                    <div class="recommend col mobile-col-4 tablet-col-4 desktop-col-4">
+                        <img class="responsive-object" src="images/recommend.jpg" alt="위시 리스트">
+                    </div>
+                    <div class="first-aid col mobile-col-4 tablet-col-4 desktop-col-4">
+                        <img class="responsive-object" src="images/first_aid.jpg" alt="위시 리스트">
+                    </div>
+                    <div class="shopping-chance col mobile-col-4 tablet-col-4 desktop-col-4">
+                        <img class="responsive-object" src="images/chance.jpg" alt="위시 리스트">
+                    </div>
+                    <div class="global col mobile-col-4 tablet-col-4 desktop-col-4">
+                        <img class="responsive-object" src="images/global.png" alt="위시 리스트">
+                    </div>
+                     <div class="join-chance col mobile-col-4 tablet-col-4 desktop-col-4 ">
+                        신규회원 가입특전
+                    </div>
+                    <div class="cs col mobile-col-4 tablet-col-4 desktop-col-4">
+                        1:1상담
+                    </div>
+                    <div class="global col mobile-col-8 tablet-col-12 desktop-col-12">
+                        동영상
+                    </div>
+                    <div class="facebook col mobile-col-8 tablet-col-8 desktop-col-8">
+                        facebook
+                    </div>
+                   
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
