@@ -11,8 +11,9 @@
   var play_slider = document.querySelector('.play-slider');
   var play_list_btn = document.querySelector('#play-list');
   var play_list = document.querySelector('.play-list');
-  var music_address = "http://localhost:3000/music_info";
-  var music_index, list_box, list_item;
+  var music_address = "http://localhost:3000/music_info/";
+  var add_form = document.querySelector('.add-form');
+  var music_index, list_box, list_item, post_list;
 
   //  유틸리티 함수
   function load(){
@@ -167,13 +168,30 @@
       for(var i=0, l=music_index.length; i<l ;i++){
         html += '<li class="list-item">'+music_index[i].singer+' - '+music_index[i].title+'</li>';
       }
+      add_form.innerHTML = '<label for="add-list" class="add-list">Add</label>'+
+                           '<input type="file" name="FileName" id="add-list" class="a11y-hidden">';
       return html;
     }
-    play_list.innerHTML = makeList();
+    play_list.firstElementChild.innerHTML = makeList();
     list_item = document.querySelectorAll('.list-item');
+    var add_list = document.querySelector('.add-list');
+    var add_value = document.querySelector('#add-list');
+    add_value.addEventListener('change', function(){
+      post_list = {
+        "src": "music/"+add_value.value.slice(add_value.value.indexOf('fakepath')+9),
+        "singer": add_value.value.slice(add_value.value.indexOf('fakepath')+9,add_value.value.indexOf('-')-1),
+        "title": add_value.value.slice(add_value.value.indexOf('-')+1,add_value.value.indexOf('.mp3')),
+        "img": "music/Drake.jpg"
+      }
+      $.post(music_address, $.param(post_list), function(data, status){
+        console.log('POST 통신 상태:', status);
+        console.log('POST 데이터:', data);
+        load();
+      })
+    });
     for(var i=0, l=music_index.length; i<l; i++){
       list_item[i].addEventListener('click', listClick.bind(null, i));
-    }
+    };
     audio.loop = false;
   }
 

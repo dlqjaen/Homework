@@ -19,6 +19,9 @@ button{
 i:hover, i:focus{
     color: white;
 }
+li{
+    list-style: none;
+}
 h1{
     width: 80%;
     margin: 30px 0 15px 0;
@@ -38,6 +41,7 @@ h3{
     height: 1px;
     position: absolute;
     margin: -1px;
+    padding: 0;
 }
 .play-slider{
     width: 62%;
@@ -130,6 +134,19 @@ h3{
 }
 .list-item:hover, .list-item:focus{
     color: white;
+}
+.add-list{
+    font-size: 0.8rem;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 10px 20px 30px;
+    padding: 10px 10px 10px 10px;
+    border:1px solid #B2AEAF;
+    border-radius: 5px;
+}
+.add-list:hover, .add-list:focus{
+    color: white;
+    border-color: white;
 }
 input[type=range]{
     -webkit-appearance: none;
