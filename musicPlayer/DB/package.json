@@ -62,6 +62,13 @@
       "title": "Hot Summer",
       "img": "music/비프리.jpg",
       "id": 9
+    },
+    {
+      "src": "music/효린 - BLUE MOON (Prod. GroovyRoom).mp3",
+      "singer": "효린",
+      "title": " BLUE MOON (Prod. GroovyRoom)",
+      "img": "music/Drake.jpg",
+      "id": 10
     }
   ]
 }

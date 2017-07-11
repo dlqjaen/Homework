@@ -186,7 +186,13 @@
       $.post(music_address, $.param(post_list), function(data, status){
         console.log('POST 통신 상태:', status);
         console.log('POST 데이터:', data);
-        load();
+        $.get(music_address, function(data, status){
+          music_index = data;
+          // console.log('통신 상태:', status); // status
+          // console.log('데이터:', music_index); // []
+          event_binding();
+          musicCheck();
+        })
       })
     });
     for(var i=0, l=music_index.length; i<l; i++){
