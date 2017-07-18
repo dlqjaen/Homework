@@ -405,12 +405,12 @@ var MyUtility = (function(global){
     // DOM 탐색 API: 유틸리티 함수
     // ——————————————————————————————————————
     /**
-     * 찾고자하는 특정 자식요소를 찾아 반환하는 함수
+     * 전달한 요소노드의 첫번째 자식요소를 반환하는 함수
      * 
      * @global
      * @func firstChild
-     * @param {node} el_node - 찾고자하는 자식요소
-     * @returns {node} - 찾고자하는 자식 요소
+     * @param {node} el_node - 요소노드
+     * @returns {node} - 인자로 전달한 요소노드의 첫번째 자식노드
      */
     var firstChild = function(el_node){
         var _firstChild = null;
@@ -426,7 +426,157 @@ var MyUtility = (function(global){
             }
         }
     }();
-    var 
+
+    /**
+     * 전달한 요소노드의 마지막 자식요소를 반환하는 함수
+     * 
+     * @global
+     * @func lastChild
+     * @param {node} el_node - 요소노드
+     * @returns {node} - 인자로 전달한 요소노드의 마지막 자식노드
+     */
+    var lastChild = function(el_node){
+        var _lastChild = null;
+        if( 'lastElementChild' in Element.prototype ){
+            return _lastChild = function(el_node){
+                validateElementNode(el_node);
+                return el_node.lastElementChild();
+            }
+        }else{
+            return _lastChild = function(el_node){
+                validateElementNode(el_node);
+                var children = el_node.children;
+                return children[ --children.length ];
+            }
+        }
+    }();
+
+    /**
+     * 전달한 요소노드의 다음 형제요소를 반환하는 함수
+     * 
+     * @global
+     * @func nextSibling
+     * @param {node} el_node - 요소노드
+     * @returns {node} - 인자로 전달한 요소노드의 다음 형제노드
+     */
+    var nextSibling = function(el_node){
+        var _nextSibling = null;
+        if( 'nextElementSibling' in Element.prototype ){
+            return _nextSibling = function(el_node){
+                validateElementNode(el_node);
+                return el_node.nextElementSibling;
+            }
+        }else{
+            return _nextSibling = function(el_node){
+                validateElementNode(el_node);
+                do{
+                    el_node = el_node.nextSibling;
+                }while(el_node && !isElementNode(el_node))
+            }
+        }
+    }();
+
+    /**
+     * 전달한 요소노드의 마지막 자식요소를 반환하는 함수
+     * 
+     * @global
+     * @func previousSibling
+     * @param {node} el_node - 요소노드
+     * @returns {node} - 인자로 전달한 요소노드의 마지막 자식노드
+     */
+    var previousSibling = function(el_node){
+        var _previousSibling;
+        if('previousElementSibling' in Element.prototype){
+            return _previousSibling = function(el_node){
+                validateElementNode(el_node);
+                el_node.previousElementSibling;
+            }
+        }else{
+            return _previousSibling = function(el_node){
+                validateElementNode(el_node);
+                do{
+                    el_node = el_node.previousSibling;
+                }while(el_node && !isElementNode(el_node))
+            }
+        }
+    }();
+
+    /**
+     * 전달한 노드의 부모노드를 찾는 함수
+     * 
+     * @global
+     * @func parent
+     * @param {node} el_node - 요소노드
+     * @param {number} depth - JavaScript 숫자열
+     * @returns {node} - 인자로 전달한 노드의 부모노드
+     */
+    var parent = function(node, depth){
+        validateElementNode(node);
+        dept = dept || 1;
+        do{ node = node.parentNode; }
+        while(node && --dept);
+        return node;
+    };
+
+    /**
+     * 전달한 요소노드가 자식노드를 유사배열(nodeList, HTMLCollection)을 반환하는 함수
+     * 
+     * @global
+     * @func hasChild
+     * @param {node} el_node - 요소노드
+     * @returns {node} - 인자로 전달한 요소노드의 자식노드들의 유사배열
+     */
+    var hasChild = function(node){
+        validateElementNode(node);
+        return node.hasChildNodes();
+    }
+
+    // ——————————————————————————————————————
+    // DOM 생성/조작 API: 유틸리티 함수
+    // ——————————————————————————————————————
+    var createElement = function(name){
+        validateError(name, 'string', '요소의 이름을 문자로 전달해주세요.');
+        return document.createElement(name);
+    }
+
+    var createText = function(content){
+        validateError(content, 'string', '콘텐츠는 문자열이어야 합니다.');
+        return document.createTextNode(content);
+    }
+    
+    var appendChild = function(parent, child){
+        validateElementNode(parent);
+        parent.appendChild(child);
+        return child;
+    }
+
+    var createEl = function(name, content){
+        validateElementNode(name, 'string', '첫번째 인자로 요소의 이름을 설정해주세요.');
+        var el = createElement(name);
+        if(contnet && isType(content, 'string')){
+            var text = createText(content);
+            appendChild(el, text)
+        }
+        return el;
+    }
+
+    var insertBefore = function(insert, target){
+        validateElementNode(insert);
+        validateElementNode(target);
+        parent(target).insertBefore(insert, target);
+        return insert;
+    }
+
+    var before = function(insert, target){
+        return insertBefore(target, insert);
+    }
+
+    var preventChild = function(parent, child){
+        validateElementNode(parent);
+        validateElementNode(child);
+        var target = firstChild(parent);
+        return target ? insertBefore(child, target) : appendChild(parnet, child)
+    }
     /**
      * JavaScript 데이터를 받아 인스턴스로 만들어 관리하는 생성자함수
      * 

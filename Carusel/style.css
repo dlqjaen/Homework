@@ -1,0 +1,27 @@
+body{
+  margin: 0;
+}
+ .wrapper{
+  width: 1024px;
+  overflow: hidden; 
+  margin: 0 auto;
+}
+.carusel{
+  font-size: 0;
+  transition: all 0.5s;
+}
+.animal-img{
+  /* transition: all 0.5s; */
+  width: 1024px;
+} 
+
+/* carusel 2 */
+.carusel{
+  position: relative;
+  height: 95vh;
+}
+.animal-img{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
